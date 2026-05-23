@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id ="menu_hospital_root"
+              name ="HFS"
+              web_icon="om_hospital,static/description/icon.png"
+              sequence = "35"
+    />
+
+    <menuitem id ="menu_frontdesk"
+              name ="Front Desk"
+              parent="menu_hospital_root"
+    />
+    
+
+    <menuitem id ="menu_billing"
+              name ="Billing"
+              parent="menu_hospital_root"
+    />
+
+     <menuitem id ="menu_patients"
+              name ="patients"
+              parent="menu_frontdesk"
+               action="action_hospital_patient"
+    />
+
+    <menuitem id ="menu_employee_view"
+              name ="Employee Management"
+              parent="menu_hospital_root"
+    />
+
+    <menuitem id ="menu_employee"
+              name ="Employee"
+              parent="menu_employee_view"
+               action="action_employee_management"
+    />
+
+    <menuitem id ="menu_patients_readonly"
+              name ="view patients"
+              parent="menu_frontdesk"
+               action="action_hospital_readonly_patient"
+    />
+
+     <menuitem id ="menu_appoinment"
+              name ="Appoinment"
+              parent="menu_frontdesk"
+               action="action_hospital_appoinment"
+    />
+
+    <menuitem id ="menu_appoinment_line"
+              name ="Appoinment Lines"
+              parent="menu_frontdesk"
+               action="action_hospital_appoinment_line"
+    />
+
+    <menuitem id ="menu_configuration"
+              name ="Configuration"
+              sequence="100"
+              groups="om_hospital.group_hospital_doctors"
+              parent="menu_hospital_root"
+    />
+
+     <menuitem id ="menu_patient_tag"
+              name ="Tags"
+              parent="menu_configuration"
+               action="action_patient_tag"
+    />
+
+    <menuitem id ="menu_hms_invoiceing"
+              name ="Invoicing"
+              parent="menu_billing"
+    />
+
+    <menuitem id ="menu_hms_payment"
+              name ="Payment"
+              parent="menu_billing"
+    />
+
+
+</odoo>

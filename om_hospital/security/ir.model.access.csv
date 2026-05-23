@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hospital_patient,access.hospital.patient,model_hospital_patient,om_hospital.group_hospital_receptionist,1,1,1,1
+access_hospital_appoinment,access.hospital.appoinment,model_hospital_appoinment,om_hospital.group_hospital_receptionist,1,1,1,1
+access_hospital_appoinment_line,access.hospital.appoinment.line,model_hospital_appoinment_line,om_hospital.group_hospital_receptionist,1,1,1,1
+access_patient_tag_receptionist,access.patient.tag.receptionist,model_patient_tag,om_hospital.group_hospital_receptionist,1,1,1,0
+access_patient_tag_doctors,access.patient.tag.doctors,model_patient_tag,om_hospital.group_hospital_doctors,1,1,1,1
+access_employee_management,access.employee.management,model_employee_management,group_hospital_receptionist,1,1,1,1

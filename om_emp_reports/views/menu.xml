@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_wizard" model="ir.actions.act_window">
+        <field name="name">Generate Report</field>
+        <field name="res_model">employee.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_report_generate"
+              name="Generate Report"
+              parent="om_hospital.menu_employee_view"
+              sequence="20"
+              action="action_report_wizard"/>
+
+</odoo>

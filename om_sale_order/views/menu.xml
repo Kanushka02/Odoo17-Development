@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="menu_sale_order_approvals"
+              name="Order Approvals"
+              parent="sale.sale_menu_root"
+              action="action_sale_order_approvals"
+              groups="om_sale_order.group_sale_order_approver"
+              sequence="2"/>
+</odoo>

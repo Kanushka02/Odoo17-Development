@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="employee_pdf_report" model="ir.actions.report">
+        <field name="name">Employee Report</field>
+        <field name="model">employee.management</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">om_emp_reports.employee_pdf_template</field>
+        <field name="report_file">om_emp_reports.employee_pdf_template</field>
+        <field name="binding_model_id" ref="om_hospital.model_employee_management"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="employee_pdf_template">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    <h2>Employee Report</h2>
+
+                    <p><strong>ID:</strong> <t t-esc="doc.employee_id"/></p>
+                    <p><strong>Name:</strong> <t t-esc="doc.name"/></p>
+                    <p><strong>Email:</strong> <t t-esc="doc.work_email"/></p>
+                    <p><strong>Phone:</strong> <t t-esc="doc.work_phone"/></p>
+                    <p><strong>Department:</strong> <t t-esc="doc.department_id.name"/></p>
+                </div>
+            </t>
+        </t>
+    </template>
+    
+</odoo>

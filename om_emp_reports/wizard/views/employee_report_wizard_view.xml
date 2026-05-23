@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_employee_report_wizard" model="ir.actions.act_window">
+        <field name="name">Generate Report</field>
+        <field name="res_model">employee.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="view_employee_report_wizard_form" model="ir.ui.view">
+        <field name="name">employee.report.wizard.form</field>
+        <field name="model">employee.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generate Report">
+
+                <group>
+                    <field name="report_type" widget="radio"/>
+                    <field name="employee_id"
+                        invisible="report_type == 'excel'"
+                        required="report_type == 'pdf'"/>
+                </group>
+
+                <footer>
+                    <button name="action_generate_pdf"
+                            string="Generate PDF"
+                            type="object"
+                            class="btn-primary"
+                            invisible="report_type == 'excel'"/>
+
+                    <button name="action_generate_excel"
+                            string="Generate Excel"
+                            type="object"
+                            class="btn-primary"
+                            invisible="report_type == 'pdf'"/>
+
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+
+            </form>
+        </field>
+    </record>
+</odoo>
